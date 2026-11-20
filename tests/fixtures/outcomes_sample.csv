@@ -1,0 +1,4 @@
+account_id,sent_at,replied,positive,meeting
+acme.com,2026-12-01T10:00:00Z,0,0,0
+acme.com,2026-12-05T10:00:00Z,1,1,0
+beta.io,2026-11-01T10:00:00Z,true,false,false

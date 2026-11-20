@@ -1,0 +1,5 @@
+[{"name":"Acme","slug":"acme","website":"https://www.acme.com","all_locations":"San Francisco, CA, USA","team_size":40,"industry":"B2B","status":"Active"},
+ {"name":"Tiny","slug":"tiny","website":"https://tiny.io","all_locations":"London, England, United Kingdom","team_size":2,"industry":"B2B","status":"Active"},
+ {"name":"Dead","slug":"dead","website":"https://dead.io","all_locations":"Toronto, ON, Canada","team_size":20,"industry":"B2B","status":"Inactive"},
+ {"name":"Bangalore Co","slug":"blr","website":"https://blr.in","all_locations":"Bengaluru, KA, India","team_size":20,"industry":"B2B","status":"Active"},
+ {"name":"Maple","slug":"maple","website":"maple.ca","all_locations":"Toronto, ON, Canada; Remote","team_size":20,"industry":"B2B","status":"Active"}]

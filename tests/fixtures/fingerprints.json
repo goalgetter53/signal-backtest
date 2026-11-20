@@ -1,0 +1,8 @@
+{
+  "Wix": {"cats": [1, 51], "meta": {"generator": "^Wix\\.com Website Builder$"}, "scriptSrc": ["static\\.parastorage\\.com"], "implies": ["React"]},
+  "React": {"cats": [12], "html": ["data-reactroot"]},
+  "Webflow": {"cats": [1, 51], "meta": {"generator": "^Webflow$"}, "html": ["<html[^>]+data-wf-site"]},
+  "HubSpot": {"cats": [32], "scriptSrc": ["js\\.hs-scripts\\.com"]},
+  "Nginx": {"cats": [22], "headers": {"server": "nginx(?:/([\\d.]+))?\\;version:\\1"}},
+  "Broken": {"cats": [1], "html": ["(unclosed"]}
+}

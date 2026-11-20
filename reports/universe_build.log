@@ -1,0 +1,4 @@
+yc-oss: 6406 companies in directory, 972 match ICP filter
+wikidata via https://qlever.cs.uni-freiburg.de/api/wikidata: 584 rows
+wikidata: 575 agency rows
+universe: 1000 companies written ({'agency': 553, 'b2b_saas': 447})

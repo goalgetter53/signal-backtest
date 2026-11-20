@@ -1,0 +1,52 @@
+# Daily signal collection. Snapshots (small zstd Parquet) are committed to an orphan `data`
+# branch so `main` stays code-only. Actions minutes are free for public repositories.
+name: collect
+on:
+  schedule:
+    - cron: "17 5 * * *" # 05:17 UTC daily (off the top of the hour to avoid queue spikes)
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: collect
+  cancel-in-progress: false
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install .
+      - name: Check out data branch (create orphan on first run)
+        run: |
+          if git ls-remote --exit-code --heads origin data >/dev/null; then
+            git fetch origin data --depth=1
+            git worktree add databranch origin/data
+            (cd databranch && git switch -c data)
+          else
+            git worktree add --detach databranch
+            (cd databranch && git switch --orphan data)
+          fi
+          mkdir -p databranch/data
+          # universe is versioned on main; the data branch keeps its own copy per run
+          cp data/universe.csv databranch/data/universe.csv
+          # seed snapshot(s) committed on main (Week 0) are carried over once, never overwritten
+          if [ -d data/snapshots ]; then cp -rn data/snapshots databranch/data/; fi
+      - name: Collect
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
+        run: |
+          signal-backtest --data-dir databranch/data --reports-dir databranch/reports collect
+          signal-backtest --data-dir databranch/data --reports-dir databranch/reports summary
+      - name: Commit snapshot
+        run: |
+          cd databranch
+          git config user.name "signal-backtest-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/snapshots data/universe.csv reports
+          git commit -m "snapshot $(date -u +%F)" || echo "nothing to commit"
+          git push origin data
