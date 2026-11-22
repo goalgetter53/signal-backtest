@@ -1,24 +1,25 @@
 {
-  "snapshot_date": "2026-11-21",
+  "snapshot_date": "2026-11-22",
   "universe_companies": 1000,
   "universe_by_segment": {
     "agency": 553,
     "b2b_saas": 447
   },
   "companies_observed": 1000,
-  "homepage_ok": 912,
+  "homepage_ok": 909,
   "homepage_status_counts": {
-    "200": 911,
+    "200": 894,
     "0": 41,
+    "403": 23,
     "-1": 21,
-    "403": 21,
+    "202": 15,
     "429": 4,
-    "202": 1,
+    "402": 1,
     "522": 1
   },
   "ats_boards_by_method": {
-    "guess": 68,
-    "link": 92
+    "link": 92,
+    "guess": 68
   },
   "ats_boards_by_provider": {
     "ashby": 121,
@@ -26,50 +27,50 @@
     "lever": 11,
     "workable": 6
   },
-  "open_roles_total": 3502,
+  "open_roles_total": 3501,
   "companies_with_open_roles_total": 153,
   "open_roles_web": 57,
   "companies_with_open_roles_web": 30,
-  "open_roles_marketing": 306,
+  "open_roles_marketing": 307,
   "companies_with_open_roles_marketing": 74,
   "open_roles_design": 44,
   "companies_with_open_roles_design": 30,
   "companies_hiring_web_link_only": 18,
-  "tech_scans_ok": 912,
-  "tech_detections": 2150,
-  "companies_with_tech_detected": 778,
+  "tech_scans_ok": 909,
+  "tech_detections": 2098,
+  "companies_with_tech_detected": 761,
   "tech_groups": {
-    "marketing_stack": 420,
-    "wordpress": 181,
-    "modern_builder": 176,
+    "marketing_stack": 409,
+    "modern_builder": 175,
+    "wordpress": 167,
     "legacy_builder": 32
   },
   "top_technologies": {
-    "Google Tag Manager": 410,
-    "Vercel": 228,
-    "Google Analytics": 201,
-    "WordPress": 181,
-    "React": 140,
-    "Next.js": 113,
-    "Yoast SEO": 81,
-    "HubSpot": 73,
+    "Google Tag Manager": 399,
+    "Vercel": 227,
+    "Google Analytics": 194,
+    "WordPress": 167,
+    "React": 139,
+    "Next.js": 112,
+    "Yoast SEO": 76,
+    "HubSpot": 74,
     "WP Engine": 50,
-    "Elementor": 41,
+    "Elementor": 38,
     "Netlify": 34,
     "Yoast SEO Premium": 28,
     "Linkedin Insight Tag": 26,
     "WordPress Block Editor": 26,
     "Webflow": 23
   },
-  "sitemaps_found": 849,
-  "sitemap_urls_total": 450336,
+  "sitemaps_found": 846,
+  "sitemap_urls_total": 613256,
   "companies_with_page": {
-    "blog": 591,
-    "careers": 324,
-    "case_studies": 432,
+    "blog": 582,
+    "careers": 322,
+    "case_studies": 426,
     "pricing": 295
   },
-  "content_hashes": 912,
+  "content_hashes": 909,
   "funding_sources": {
     "techcrunch_venture": {
       "http_status": 200,
@@ -86,16 +87,16 @@
   },
   "funding_items_seen": 6.0,
   "funding_matches": 0,
-  "github_orgs_found": 137,
+  "github_orgs_found": 135,
   "github_api_status_counts": {
-    "200": 135,
-    "404": 2
+    "200": 134,
+    "404": 1
   },
   "rows_by_collector": {
     "funding": 4,
-    "github": 679,
-    "jobs": 5144,
-    "techstack": 3959,
-    "website": 8623
+    "github": 672,
+    "jobs": 5143,
+    "techstack": 3881,
+    "website": 8599
   }
 }
